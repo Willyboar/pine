@@ -10,9 +10,6 @@
   * [Installation](#installation)
   * [Documentation](#documentation)  
   * [Examples](#examples)     
-    * [Example 1](#example-1)     
-    * [Example 2](#example-2)     
-    * [Example 3](#example-3)     
   * [Contributing](#contributing)  
   * [Issue Template](#issue-template)    
     * [Bug report](#bug-report)   
@@ -40,31 +37,68 @@ To install it you must have Nim and Nimble Package Manager installed in your Com
 ```
 $ nimble install pine
 ```
+OR
 
+```
+$ nimble install https://github.com/thebigbaron/pine.git
+```
+press 
 
+```
+$pine -v 
+```
+or
+```
+$pine --version 
+```
+to see if everything been ok. You will see pine and nim version.
 
+you can see the available options by pressing:
+
+```
+pine -h 
+```
+or
+```
+pine --help 
+```
 ## Documentation
+ Pine designed to simplicity in mind. After installation you can go to any folder you want and press: 
+```
+$ pine new
+```
+you will prompted to choose a project name. A Folder with your project would be created.  Press: ``` $cd <projectname>``` and go into your project folder.
 
-WIP
+You have a lot of options. With ``` $ pine page ```  you will be prompted to create a new page and with ``` $ pine post ``` a new post. 
+
+After that you can edit your pages and posts using   [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) syntax. 
+
+If you are ready you can build your static blog/site by pressing:
+```
+$ pine build
+```
+a folder with the name "build" would be created, with your static blog/site inside. You can take all the files and upload it in the internet in any service you want like Netlify. 
+
+If you want to use Github Pages to host your site, pine offers easy deployments. Create a new repo and activate Github Pages targeting the master branch. Go into the build folder and press: 
+
+```
+$ pine init-deploy
+```
+you would be asked to give some info, like your username etc. 
+
+> Be careful you must give the same name as the newly created repo.
+
+you are ready. Every time you are created a new post or a new page you can deploy your page with : 
+
+```
+$ pine deploy
+```
+
+
 
 ## Examples
 
-
-
-### Example 1
-
-
-
-### Example 2
-
-
-
-### Example 3
-
-
-
-
-
+See [Here](https://bigbaron.org) for a demo.
 
 ## Contributing
 
