@@ -1,11 +1,10 @@
 <h1 align="center">
-<img src="https://user-images.githubusercontent.com/22755228/67153472-7a566300-f2f2-11e9-9f2f-b8d12424e529.png" width="128">
+<img src="https://user-images.githubusercontent.com/22755228/67495929-51342a80-f684-11e9-9d4a-53d15fa15acb.png" width="128">
  </h1>
 <p align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a></p>
 <h1 align="center">Pine</h1>
 <p align="center">A Nim Static Blog Generator (WIP)</p>
 
-## Table of contents
 
   * [Description](#description)
   * [Installation](#installation)
