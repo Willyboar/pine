@@ -213,17 +213,6 @@ a:hover {
   color: #f61600;
 }
 
-.features {
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.features li {
-  width: 100%;
-  text-align: center;
-  padding: .25em;
-}
-
 .menu-right {
   position: fixed;
   right: 0;
@@ -537,6 +526,7 @@ label.hamburger>i {
   width: 100%;
   height: 2px;
   top: 50%;
+  right:10px
   background-color: #8c8c8c;
   pointer-events: auto;
   transition-duration: .35s;
@@ -566,7 +556,7 @@ label.hamburger>i:after {
 label.hamburger {
   position: fixed;
   top: 10px;
-  right: 40px;
+  right: 10px;
 }
 
 #disqus_thread {
