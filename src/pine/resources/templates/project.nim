@@ -170,7 +170,7 @@ proc buildStatic(foldername: string) =
   
 
   # Index must take all the posts
-  let indexFile = indexLayout(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, body, disqus, footer)
+  let indexFile = indexLayout(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, body, footer)
   writeFile(appDir / "index.html", indexFile)
   
 

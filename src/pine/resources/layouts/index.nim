@@ -1,6 +1,6 @@
 const indexNimf* = """
 #? stdtmpl | standard
-#proc indexLayout*(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, body, disqus, footer: string): string =               
+#proc indexLayout*(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, body, footer: string): string =               
 #  result = ""
 <!DOCTYPE HTML>
 <html>
@@ -48,7 +48,6 @@ const indexNimf* = """
   <div class="posts">
     $body
   </div>
-  <script id="dsq-count-scr" src="//$disqus/count.js" async></script>
   $footer
 </body>"""
 
