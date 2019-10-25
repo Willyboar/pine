@@ -15,8 +15,8 @@ const indexNimf* = """
   <script src="https://kit.fontawesome.com/a30ba13df5.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/thebigbaron/lime@v1.0.0/dist/lime/lime.min.css'>
-  <link rel='stylesheet' href='../assets/css/style.css' type='text/css'>
-  <script src="../assets/js/main.js" type="text/javascript"></script>
+  <link rel='stylesheet' href='assets/css/style.css' type='text/css'>
+  <script src="assets/js/main.js" type="text/javascript"></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', '{{ config.$gaCode }}']);

@@ -31,8 +31,8 @@ $base
 </header>
 
 <div class="nav">
-  <a href="/"><img src="https://user-images.githubusercontent.com/22755228/67323378-0ea30e80-f51b-11e9-881c-3aa84e36ed9d.png"></a>
-  <a href="/">$logo</a>
+  <a href="$url"><img src="https://user-images.githubusercontent.com/22755228/67323378-0ea30e80-f51b-11e9-881c-3aa84e36ed9d.png"></a>
+  <a href="$url">$logo</a>
 </div>
 <div class="post">
   <article class="post_ext">

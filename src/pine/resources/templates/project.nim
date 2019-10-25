@@ -88,7 +88,7 @@ proc createPagesHtml*(pages: string): string =
     let a = replace(p, pages, "")
     let b = replace(a, ".md", "")
     let pageTitle = replace(b, "/", "")
-    let pageFile = pageLayout(title, pageTitle, base, headerLinks, body, footer)
+    let pageFile = pageLayout(title, pageTitle, base, headerLinks, body, url, footer)
     writeFile(pagesDir / b & ".html", pageFile)
 
 proc createPostsHtml*(posts: string): string =

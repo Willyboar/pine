@@ -5,6 +5,9 @@
 <h1 align="center">Pine</h1>
 <p align="center">A Nim Static Blog Generator (WIP)</p>
 
+## Pine 
+
+### A Nim static blog generator
 
   * [Description](#description)
   * [Installation](#installation)

@@ -12,10 +12,10 @@ BASE_TITLE = Pine
 SITE_AUTHOR = Pine
 
 # A small description of your site.
-SMALL_DESC = This is a small description!
+SMALL_DESC = "This is a small description!"
 
 # Is very important to set your site url correct or a lot of things will broke.
-URL = example.com
+URL = "example.com"
 
 # Setting Basic Meta Tags
 [META]

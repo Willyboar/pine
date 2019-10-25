@@ -1,6 +1,6 @@
 const pageNimf* = """
 #? stdtmpl | standard
-#proc pageLayout*(title, pageTitle, base, links, body, footer: string): string =                   
+#proc pageLayout*(title, pageTitle, base, links, body, url, footer: string): string =                   
 #  result = ""
 $base
 <header>
@@ -30,8 +30,8 @@ $base
   </div>
 </header>
 <div class="nav">
-  <a href="/"><img src="https://user-images.githubusercontent.com/22755228/67323378-0ea30e80-f51b-11e9-881c-3aa84e36ed9d.png"></a>
-  <a href="/">$title</a>
+  <a href="$url"><img src="https://user-images.githubusercontent.com/22755228/67323378-0ea30e80-f51b-11e9-881c-3aa84e36ed9d.png"></a>
+  <a href="$url">$title</a>
 </div>
 <div class="page">
   <h1 class="page-title">$pageTitle</h1> $body
