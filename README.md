@@ -106,7 +106,7 @@ $ pine deploy
 
 ## Examples
 
-See [Here](https://bigbaron.org) for a demo.
+See [Here](https://thebigbaron.github.io/pineblog/) for a demo and [Here](https://github.com/thebigbaron/pineblog) for the build structure.
 
 ## Contributing
 
