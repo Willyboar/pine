@@ -69,9 +69,14 @@ $ pine new
 ```
 you will prompted to choose a project name. A Folder with your project would be created.  Press: ``` $cd <projectname>``` and go into your project folder.
 
+> It is very important to configure some basic things in the 
+> ```config.nim.cfg ``` file before to go to the next step.
+
 You have a lot of options. With ``` $ pine page ```  you will be prompted to create a new page and with ``` $ pine post ``` a new post. 
 
 After that you can edit your pages and posts using   [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) syntax. 
+
+You can do it with a lot of markdown editors but we recommend  open sourced [Stackedit](https://stackedit.io) for this job.
 
 If you are ready you can build your static blog/site by pressing:
 ```
