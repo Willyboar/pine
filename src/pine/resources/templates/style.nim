@@ -157,15 +157,18 @@ ul {
 .type_title {
   margin: 5px 0;
   font-weight: bold;
-  letter-spacing: 3px;
+  font-size: 2.5em;
   text-transform:capitalize;
 }
 
-.type_title:hover {
+.type_title a {
+  color:#383f3d;
+}
+
+.type_title a:hover {
   color: #f61600;
 }
 
-.type_content {}
 
 .content {
   font-family: 'Roboto Mono', monospace;

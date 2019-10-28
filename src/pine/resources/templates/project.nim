@@ -68,7 +68,7 @@ proc getAllPosts*(posts: string): string =
     if not a.startsWith("_"):
       let b = replace(a, ".html", "")
       let c = replace(b, "_", " ")
-      let d = `div`(class="post", "\n", "    ", article(class="post_link", "\n", "\t", p(class="type_date", postDate), "\n", "\t", h1(class="type_title", c), "\n", "\t", a(href="posts/" & a, class="read_more", "\n", "\t  ", button(class="read_more_button", "Read More", span("&rsaquo;"))), "\n", "\t", a(href= url & "/posts/" & a & "#disqus_thread", class="comment_count", i(class="far fa-comments"), " Comments")))
+      let d = `div`(class="post", "\n", "    ", article(class="post_link", "\n", "\t", p(class="type_date", postDate), "\n", "\t", h1(class="type_title", a(href="posts/" & a, c)), "\n", "\t", a(href="posts/" & a, class="read_more", "\n", "\t  ", button(class="read_more_button", "Read More", span("&rsaquo;"))), "\n", "\t", a(href= url & "/posts/" & a & "#disqus_thread", class="comment_count", i(class="far fa-comments"), " Comments")))
       result &= d
 
 
