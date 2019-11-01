@@ -1,6 +1,6 @@
 const postNimf* = """
 #? stdtmpl | standard
-#proc postLayout*(title, logo,  base, links, date, body, url, link, disqus, footer: string): string =                   
+#proc postLayout*(title, logo,  base, links, date, body, url, link, disqus, social, footer: string): string =                   
 #  result = ""
 $base
 <header>
@@ -21,9 +21,7 @@ $base
       </li>
       <li>
         <ul>
-          <li><a href="#"><i class="fab fa-github"></i> Github</a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          $social
         </ul>
       </li>
     </ul>

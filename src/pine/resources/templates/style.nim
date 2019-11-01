@@ -254,7 +254,7 @@ a:hover {
 }
 
 .menu-right li:last-child {
-  margin-bottom: 2em;
+  margin-bottom: 1.2em;
 }
 
 .menu-right li a {
@@ -530,7 +530,7 @@ label.hamburger>i {
   width: 100%;
   height: 2px;
   top: 50%;
-  right:10px
+  right:10px;
   background-color: #8c8c8c;
   pointer-events: auto;
   transition-duration: .35s;

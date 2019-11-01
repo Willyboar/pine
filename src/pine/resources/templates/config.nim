@@ -28,28 +28,29 @@ META_AUTH = Pine
 GA_CODE = UA-000000000-0
 
 # Setting DISQUS_LINK with the link provided to you from DISQUS
-# To enable comments in your Posts
+
 [DISQUS]
 DISQUS_LINK = disqus-link
 
 
 # Setting Social Networks
-[FACEBOOK]
-FACEBOOK_LINK = link
-[TWITTER]
-TWITTER_LINK = link
-[INSTAGRAM]
-INSTAGRAM_LINK = link
-[GITHUB]
-GITHUB_LINK = link
-[DRIBBBLE]
-DRIBBLE_LINK = link
 
+[SOCIAL]
+# Add Facebook name, no link e.g "bigbaron" 
+FACEBOOK = ""
 
+# Add Twitter name, no link e.g "bigbaron" 
+TWITTER = ""
 
-# Add share post functionality
-[SHARE_POST]
-ACTIVE = true
+# Add Instagram name, no link e.g "bigbaron" 
+INSTAGRAM = ""
+
+# Add Github name, no link e.g "bigbaron" 
+GITHUB = ""
+
+# Add Dribbble name, no link e.g "bigbaron" 
+DRIBBBLE = "retromaniacs"
+
 
 
 """

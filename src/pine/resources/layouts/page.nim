@@ -1,6 +1,6 @@
 const pageNimf* = """
 #? stdtmpl | standard
-#proc pageLayout*(title, pageTitle, base, links, body, url, footer: string): string =                   
+#proc pageLayout*(title, pageTitle, base, links, body, url, social, footer: string): string =                   
 #  result = ""
 $base
 <header>
@@ -21,9 +21,7 @@ $base
       </li>
       <li>
         <ul>
-          <li><a href="#"><i class="fab fa-github"></i> Github</a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          $social
         </ul>
       </li>
     </ul>

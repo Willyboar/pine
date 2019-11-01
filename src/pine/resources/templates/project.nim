@@ -43,7 +43,56 @@ let
   metaAuth = dict.getSectionValue("META","META_AUTH")
   gaCode = dict.getSectionValue("GA", "GA_CODE")
   disqus = dict.getSectionValue("DISQUS", "DISQUS_LINK")
+  facebook = dict.getSectionValue("SOCIAL","FACEBOOK")
+  twitter = dict.getSectionValue("SOCIAL","TWITTER")
+  instagram = dict.getSectionValue("SOCIAL","INSTAGRAM")
+  github = dict.getSectionValue("SOCIAL","GITHUB")
+  dribbble = dict.getSectionValue("SOCIAL","DRIBBBLE")
 
+
+proc getSocialLinks*(links: string): string =
+  if facebook != "":
+    result &= li(a(href= "https://facebook.com/" & facebook, i(class="fab fa-facebook"), " facebook"))
+  else:
+    result &= ""
+  if twitter != "":
+    result &= li(a(href= "https://twitter.com/" & twitter, i(class="fab fa-twitter"), " twitter"))
+  else:
+    result &= ""
+  if instagram != "":
+    result &= li(a(href= "https://instagram.com/" & instagram, i(class="fab fa-instagram"), " instagram"))
+  else:
+    result &= ""
+  if github != "":
+    result &= li(a(href= "https://github.com/" & github, i(class="fab fa-github"), " github"))
+  else:
+    result &= ""
+  if dribbble != "":
+    result &= li(a(href= "https://dribbble.com/" & dribbble, i(class="fab fa-dribbble"), " dribbble"))
+  else:
+    result &= ""
+
+proc getSocialBtn*(links: string): string =
+  if facebook != "":
+    result &= a(href= "https://facebook.com/" & facebook, button(class="social_button", i(class="fab fa-facebook"), " facebook"))
+  else:
+    result &= ""
+  if twitter != "":
+    result &= a(href= "https://twitter.com/" & twitter, button(class="social_button", i(class="fab fa-twitter"), " twitter"))
+  else:
+    result &= ""
+  if instagram != "":
+    result &= a(href= "https://instagram.com/" & instagram, button(class="social_button", i(class="fab fa-instagram"), " instagram"))
+  else:
+    result &= ""
+  if github != "":
+    result &= a(href= "https://github.com/" & github, button(class="social_button", i(class="fab fa-github"), " github"))
+  else:
+    result &= ""
+  if dribbble != "":
+    result &= a(href= "https://dribbble.com/" & dribbble, button(class="social_button", i(class="fab fa-dribbble"), " dribbble"))
+  else:
+    result &= ""
 
 
 proc getPagesLinks*(pages: string): string =
@@ -76,11 +125,13 @@ proc getAllPosts*(posts: string): string =
 
 
 let 
-  links = getPagesLinks(pagesDir) 
+  links = getPagesLinks(pagesDir)
+  social = getSocialLinks(links)
+  socialBtn = getSocialBtn(links)
   headerLinks = getHeaderLinks(pagesDir) 
   base = baseLayout(title, metaDesc, metaKey, metaAuth, gaCode)
   footer = footerLayout(title, yearNow, disqus)
-  header = headerLayout(title, links) 
+  header = headerLayout(title, links, social) 
   body = getAllPosts(postsDir)
 
 
@@ -92,7 +143,7 @@ proc createPagesHtml*(pages: string): string =
       fileName = replace(path, pages, "")
       fileLast = replace(fileName, ".md", "")
       pageTitle = replace(fileLast, "/", "")
-      pageFile = pageLayout(title, pageTitle, base, headerLinks, body, url, footer)
+      pageFile = pageLayout(title, pageTitle, base, headerLinks, body, url, social, footer)
     writeFile(pagesDir / fileLast & ".html", pageFile)
 
 proc createPostsHtml*(posts: string): string =
@@ -105,7 +156,7 @@ proc createPostsHtml*(posts: string): string =
       fileLast = replace(fileName, "/", "")
       articleTitle = replace(fileLast, "_", " ")
       postName = fileName & ".html"
-      postFile = postLayout(articleTitle, title,  base, headerLinks, postDate, body, url, postName, disqus, footer)
+      postFile = postLayout(articleTitle, title,  base, headerLinks, postDate, body, url, postName, disqus, social, footer)
     writeFile(postsDir / fileName & ".html", postFile)
 
 proc buildStatic(foldername: string) =
@@ -175,7 +226,7 @@ proc buildStatic(foldername: string) =
   
 
   # Index must take all the posts
-  let indexFile = indexLayout(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, body, footer)
+  let indexFile = indexLayout(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, socialBtn, body, footer)
   writeFile(appDir / "index.html", indexFile)
   
 

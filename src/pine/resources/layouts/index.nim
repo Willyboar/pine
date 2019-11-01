@@ -1,6 +1,6 @@
 const indexNimf* = """
 #? stdtmpl | standard
-#proc indexLayout*(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, body, footer: string): string =               
+#proc indexLayout*(title, metaDesc, metaKey, metaAuth, gaCode, header, smalldesc, social, body, footer: string): string =               
 #  result = ""
 <!DOCTYPE HTML>
 <html>
@@ -39,9 +39,7 @@ const indexNimf* = """
     <h1>$title</h1>
     <p>$smalldesc</p>
     <p>
-      <a href=""><button class="social_button"><i class="fab fa-github"></i> Github</button></a>
-      <a href=""><button class="social_button"><i class="fab fa-twitter"></i> Twitter</button></a>
-      <a href=""><button class="social_button"> <i class="fab fa-instagram"></i> Instagram</button></a>
+      $social
     </p>
   </div>
   <div class="posts">
