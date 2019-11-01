@@ -39,6 +39,7 @@ ul {
 
 .main_header {
   margin-top: 100px;
+  border-bottom: .01rem solid #e3eae5;
 }
 
 .main_header h1 {

@@ -44,7 +44,6 @@ const indexNimf* = """
       <a href=""><button class="social_button"> <i class="fab fa-instagram"></i> Instagram</button></a>
     </p>
   </div>
-  <hr>
   <div class="posts">
     $body
   </div>
