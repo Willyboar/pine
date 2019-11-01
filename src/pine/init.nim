@@ -19,6 +19,7 @@ import resources/layouts/codeUnAuthContent
 
 
 proc newProject*(folderName: string) =
+# Create the Project structure
   let
     dir = getCurrentDir()
     appDir = joinPath(dir, folderName)
@@ -104,6 +105,7 @@ proc newProject*(folderName: string) =
       createDir(pubDir)
     echo "  |-- public/".rfSeaGreen2
 
+  # Public Error Pages Layouts
   writeFile(pubDir / "codeBadReqContent.nimf", badReqContent)
   echo "\t|-- codeBadReqContent.nimf".rfSeaGreen2
 
@@ -121,7 +123,7 @@ proc newProject*(folderName: string) =
   writeFile(appDir / "config.nim.cfg", configContent)
   echo "  |-- config.nim.cfg".rfSeaGreen2
 
-  writeFile(appDir /  "builder.nim", projectNim)
+  writeFile(appDir /  "builder.nim", projectNim) #This file is responsible for building the static site
   echo "  |-- builder.nim".rfSeaGreen2
   
   echo "------------------------------"
@@ -130,11 +132,13 @@ proc newProject*(folderName: string) =
 
   
 proc addPost*(postTitle: string) =
+# Takes the input name from the console and add _ to the name to create md post file
   let postsDir = joinPath(getCurrentDir(), "posts")
   let postTrim = replace(postTitle, " ", "_")
   writeFile(postsDir /  postTrim & ".md", "# " & postTitle)
 
 proc addPage*(pageTitle: string) =
+# Takes the input name from the console and  creates md page file
   let pagesDir = joinPath(getCurrentDir(), "pages")
   writeFile(pagesDir /  pageTitle & ".md", "# This is the " & pageTitle & " Page")
 

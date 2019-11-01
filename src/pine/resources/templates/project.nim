@@ -47,29 +47,32 @@ let
 
 
 proc getPagesLinks*(pages: string): string =
-  for k, p in walkDir(pages):
-    let a = replace(p, pages & "/", "")
-    if not a.startsWith("_"):
-      let b = replace(a, ".html", "")
-      let d = li(a(href="pages/" & a, b))
-      result &= d
+  for key, path in walkDir(pages):
+    let file = replace(path, pages & "/", "")
+    if not file.startsWith("_"):
+      let 
+        fileName = replace(file, ".html", "")
+        htmlLink = li(a(href="pages/" & file, fileName))
+      result &= htmlLink
 
 proc getHeaderLinks*(pages: string): string =
-  for k, p in walkDir(pages):
-    let a = replace(p, pages & "/", "")
-    if not a.startsWith("_"):
-      let b = replace(a, ".html", "")
-      let e = li(a(href="../pages/" & a, b))
-      result &= e
+  for key, path in walkDir(pages):
+    let file = replace(path, pages & "/", "")
+    if not file.startsWith("_"):
+      let 
+        fileName = replace(file, ".html", "")
+        headLink = li(a(href="../pages/" & file, fileName))
+      result &= headLink
     
 proc getAllPosts*(posts: string): string =
-  for k, p in walkDir(posts):
-    let a = replace(p, posts & "/", "")
-    if not a.startsWith("_"):
-      let b = replace(a, ".html", "")
-      let c = replace(b, "_", " ")
-      let d = `div`(class="post", "\n", "    ", article(class="post_link", "\n", "\t", p(class="type_date", postDate), "\n", "\t", h1(class="type_title", a(href="posts/" & a, c)), "\n", "\t", a(href="posts/" & a, class="read_more", "\n", "\t  ", button(class="read_more_button", "Read More", span("&rsaquo;"))), "\n", "\t", a(href= url & "/posts/" & a & "#disqus_thread", class="comment_count", i(class="far fa-comments"), " Comments")))
-      result &= d
+  for key, path in walkDir(posts):
+    let file = replace(path, posts & "/", "")
+    if not file.startsWith("_"):
+      let
+        fileName = replace(file, ".html", "")
+        cleanDash = replace(fileName, "_", " ")
+        postContent = `div`(class="post", "\n", "    ", article(class="post_link", "\n", "\t", p(class="type_date", postDate), "\n", "\t", h1(class="type_title", a(href="posts/" & file, cleanDash)), "\n", "\t", a(href="posts/" & file, class="read_more", "\n", "\t  ", button(class="read_more_button", "Read More", span("&rsaquo;"))), "\n", "\t", a(href= url & "/posts/" & file & "#disqus_thread", class="comment_count", i(class="far fa-comments"), " Comments")))
+      result &= postContent
 
 
 let 
@@ -82,26 +85,28 @@ let
 
 
 proc createPagesHtml*(pages: string): string =
-  for k, p in walkDir(pages):
-    let d = readFile(p)
-    let body = markdown(d)
-    let a = replace(p, pages, "")
-    let b = replace(a, ".md", "")
-    let pageTitle = replace(b, "/", "")
-    let pageFile = pageLayout(title, pageTitle, base, headerLinks, body, url, footer)
-    writeFile(pagesDir / b & ".html", pageFile)
+  for key, path in walkDir(pages):
+    let 
+      file = readFile(path)
+      body = markdown(file)
+      fileName = replace(path, pages, "")
+      fileLast = replace(fileName, ".md", "")
+      pageTitle = replace(fileLast, "/", "")
+      pageFile = pageLayout(title, pageTitle, base, headerLinks, body, url, footer)
+    writeFile(pagesDir / fileLast & ".html", pageFile)
 
 proc createPostsHtml*(posts: string): string =
-  for k, p in walkDir(posts):
-    let d = readFile(p)
-    let body = markdown(d)
-    let a = replace(p, posts, "")
-    let b = replace(a, ".md", "")
-    let c = replace(b, "/", "")
-    let articleTitle = replace(c, "_", " ")
-    let postName = b & ".html"
-    let postFile = postLayout(articleTitle, title,  base, headerLinks, postDate, body, url, postName, disqus, footer)
-    writeFile(postsDir / b & ".html", postFile)
+  for key, path in walkDir(posts):
+    let
+      fileContent = readFile(path)
+      body = markdown(fileContent)
+      file = replace(path, posts, "")
+      fileName = replace(file, ".md", "")
+      fileLast = replace(fileName, "/", "")
+      articleTitle = replace(fileLast, "_", " ")
+      postName = fileName & ".html"
+      postFile = postLayout(articleTitle, title,  base, headerLinks, postDate, body, url, postName, disqus, footer)
+    writeFile(postsDir / fileName & ".html", postFile)
 
 proc buildStatic(foldername: string) =
   block buildAppDir:
@@ -191,6 +196,8 @@ echo "You succesfully build your site! Copy files from the 'build' folder and up
 echo "You can also activate GH Pages and deploy automatic with $ pine deploy ".rfSeaGreen4
 echo "For more informations please visit: https://github.com/thebigbaron/pine".rfSeaGreen4
 echo " "
+
+
 
 """
 
