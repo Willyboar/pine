@@ -36,20 +36,20 @@ DISQUS_LINK = disqus-link
 # Setting Social Networks
 
 [SOCIAL]
-# Add Facebook name, no link e.g "bigbaron" 
+# Add Facebook name, no link e.g "bigbaron", set it "" (no " ") to disable. 
 FACEBOOK = ""
 
-# Add Twitter name, no link e.g "bigbaron" 
+# Add Twitter name, no link e.g "bigbaron", set it "" (no " ") to disable. 
 TWITTER = ""
 
-# Add Instagram name, no link e.g "bigbaron" 
+# Add Instagram name, no link e.g "bigbaron", set it "" (no " ") to disable.  
 INSTAGRAM = ""
 
-# Add Github name, no link e.g "bigbaron" 
+# Add Github name, no link e.g "bigbaron", set it "" (no " ") to disable.  
 GITHUB = ""
 
-# Add Dribbble name, no link e.g "bigbaron" 
-DRIBBBLE = "retromaniacs"
+# Add Dribbble name, no link e.g "bigbaron", set it "" (no " ") to disable. 
+DRIBBBLE = ""
 
 
 
