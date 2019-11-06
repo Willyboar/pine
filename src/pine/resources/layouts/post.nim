@@ -39,11 +39,11 @@ $base
     <div class="content">
       $body
     </div>
-    <a href="/" class="read_more"><button class="read_more_button">Back to Home <span>&rsaquo;</span></button> </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=$url/posts/$link">
+    <a href="$url" class="read_more"><button class="read_more_button">Back to Home <span>&rsaquo;</span></button> </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=$url/posts$link">
 	  <button class="facebook_button"><i class="fab fa-facebook-square"></i> Share</button>
 	  </a>
-    <a href="https://twitter.com/home?status=$url/posts/$link">
+    <a href="https://twitter.com/home?status=$url/posts$link">
 	  <button class="twitter_button"><i class="fab fa-twitter"></i> Tweet</button>
 	  </a>
   </article>

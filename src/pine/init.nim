@@ -1,5 +1,5 @@
 import os, strformat, strutils, times, rainbow
-import consts
+
 
 import resources/templates/config
 import resources/templates/project

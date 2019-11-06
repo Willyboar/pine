@@ -1,7 +1,4 @@
-import os, osproc, parseopt, strutils
-import markdown, rainbow
-
-
+import os, osproc, parseopt, strutils, rainbow
 
 import pine/consts
 import pine/init
@@ -75,7 +72,7 @@ proc main() =
         discard execCmd("git add .")
         echo "Please enter the commit message: ".rfYellow1
         var commitMessage: string = readLine(stdin)
-        discard execCmd("git commit -am"  & "'" &  commitMessage   & "'")
+        discard execCmd("git commit -am" & "'" & commitMessage & "'")
         discard execCmd("git push -u origin master")
       else: 
         echo "Not exist command.".rfMaroon
